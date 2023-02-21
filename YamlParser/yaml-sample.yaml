@@ -1,0 +1,21 @@
+queryName: Query Name
+querySql: |-
+  Select * From Employees
+permissions:
+permissionList:
+  - first level permission
+  - second level permission
+defaultSortOrder: name, price
+description: |-
+  Government agencies are in greater need for solutions that could streamline the coordination of knowledge, communications, workflow, and resources to efficiently manage their caseloads. 
+  Most case management processes are very complex, and a running list of compliance and regulatory requirements makes it tough to implement and manage. 
+  Citizens are also demanding faster and responsive services from their government agencies.
+modeCode: Read Mode
+parameterConfig:
+  name: Dharma
+  place: Hyderabad
+  address: Bachupally
+columnConfig:
+  place: Albuquerque
+  address: Albuquerque
+  zipCode: 87111
