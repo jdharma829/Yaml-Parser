@@ -12,10 +12,30 @@ description: |-
   Citizens are also demanding faster and responsive services from their government agencies.
 modeCode: Read Mode
 parameterConfig:
-  name: Dharma
-  place: Hyderabad
-  address: Bachupally
+  one:
+    type: Int
+    isArray: false
+    defaultValue: 10
+  two:
+    type: String
+    isArray: false
+    defaultValue: 20
+  three:
+    type: JSON
+    isArray: true
+    defaultValue: '{ "name": "Dharma", "place": "Albuquerque" }'
 columnConfig:
-  place: Albuquerque
-  address: Albuquerque
-  zipCode: 87111
+  five:
+    type: Int
+    lOVType: LOV
+    subQueryName: Sub Query Name 1
+    subQueryParameters:
+      param 1: param value 1
+      param 2: param value 2
+  four:
+    type: String
+    lOVType: LOV
+    subQueryName: Sub Query Name 2
+    subQueryParameters:
+      param 3: param value 3
+      param 4: param value 4

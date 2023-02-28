@@ -4,6 +4,7 @@ using YamlDotNet.Core.Events;
 using YamlDotNet.Core;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.Utilities;
+using System.Runtime.Serialization;
 
 namespace YamlParser
 {
@@ -147,6 +148,9 @@ namespace YamlParser
             JValue jVal = (JValue)value;
             switch (jVal.Type)
             {
+                case JTokenType.Boolean:
+                    emitter.Emit(new Scalar(jVal.ToString().ToLower()));
+                    break;
                 case JTokenType.Comment:
                     emitter.Emit(new YamlDotNet.Core.Events.Comment(jVal.Value.ToString(), false));
                     break;
@@ -154,10 +158,7 @@ namespace YamlParser
                     break;
                 case JTokenType.Null:
                     emitter.Emit(new Scalar(null, "null"));
-                    break;
-                case JTokenType.Boolean:
-                    emitter.Emit(new Scalar(jVal.ToString().ToLower()));
-                    break;
+                    break;                
                 case JTokenType.String:
                     var val = value.ToString();
                     if (val.IndexOf("\n") > 0)
@@ -182,7 +183,7 @@ namespace YamlParser
                         }
                     }
                     break;
-                default:
+                default:                   
                     emitter.Emit(new Scalar(jVal.ToString()));
                     break;
             }

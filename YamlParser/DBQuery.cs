@@ -4,23 +4,23 @@ namespace YamlParser
 {
     public class DBQuery
     {
-        protected void CheckJSON(ref dynamic prop, dynamic value)
-        {
-            if (value is String)
-            {
-                try
-                {
-                    prop = JObject.Parse(value);
-                }
-                catch (Exception e)
-                {
-                    prop = value;
+        //protected void CheckJSON(ref dynamic prop, dynamic value)
+        //{
+        //    if (value is String)
+        //    {
+        //        try
+        //        {
+        //            prop = JObject.Parse(value);
+        //        }
+        //        catch (Exception e)
+        //        {
+        //            prop = value;
 
-                }
-            }
-            else
-                prop = value;
-        }
+        //        }
+        //    }
+        //    else
+        //        prop = value;
+        //}
 
         public struct ListQueryModeCode
         {
@@ -33,6 +33,7 @@ namespace YamlParser
 
         // this is a multi line SQL query with line feeds .
         public string QuerySql { get; set; }
+
         public string? Permissions { get; set; }
 
         // multiline value each line has one permission id
@@ -46,21 +47,24 @@ namespace YamlParser
 
         public string? ModeCode { get; set; }
 
+        public Dictionary<string, QueryParameterInfo>? ParameterConfig { get; set; }
 
-        private dynamic? _parameterConfig, _columnConfig;
+        public Dictionary<string, QueryColumnInfo>? ColumnConfig { get; set; }
 
-        //json
-        public dynamic? ParameterConfig
-        {
-            get { return _parameterConfig; }
-            set { CheckJSON(ref _parameterConfig, value); }
-        }
+        //private dynamic? _parameterConfig, _columnConfig;
 
-        //json
-        public dynamic? ColumnConfig
-        {
-            get { return _columnConfig; }
-            set { CheckJSON(ref _columnConfig, value); }
-        }
+        ////json
+        //public dynamic? ParameterConfig
+        //{
+        //    get { return _parameterConfig; }
+        //    set { CheckJSON(ref _parameterConfig, value); }
+        //}
+
+        ////json
+        //public dynamic? ColumnConfig
+        //{
+        //    get { return _columnConfig; }
+        //    set { CheckJSON(ref _columnConfig, value); }
+        //}
     }
 }
