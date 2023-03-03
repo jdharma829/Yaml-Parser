@@ -39,6 +39,6 @@ Console.WriteLine(yamlContent);
 
 var result = YamlConverter.Deserialize<DBQuery>(yamlContent);
 
-Console.WriteLine(YamlConverter.Serialize(result));
+//Console.WriteLine(YamlConverter.Serialize(result));
 
 Console.Read();

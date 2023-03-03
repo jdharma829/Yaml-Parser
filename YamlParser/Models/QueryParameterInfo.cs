@@ -1,7 +1,4 @@
-﻿using System.Text.Json.Nodes;
-using YamlDotNet.Core.Tokens;
-
-namespace YamlParser.Models;
+﻿namespace YamlParser.Models;
 
 public class QueryParameterInfo
 {
