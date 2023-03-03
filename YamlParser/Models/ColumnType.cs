@@ -1,17 +1,16 @@
-﻿namespace YamlParser.Models
+﻿namespace YamlParser.Models;
+
+public enum ColumnType
 {
-    public enum ColumnType
-    {
-        String,
-        Boolean,
-        Int,
-        Date,
-        DateTime,
-        Time,
-        Float,
-        Double,
-        Guid,
-        JSON,
-        SubQuery
-    }
+    String,
+    Boolean,
+    Int,
+    Date,
+    DateTime,
+    Time,
+    Float,
+    Double,
+    Guid,
+    JSON,
+    SubQuery
 }
