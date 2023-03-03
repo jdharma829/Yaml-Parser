@@ -1,4 +1,4 @@
-﻿namespace YamlParser
+﻿namespace YamlParser.Models
 {
     // TODO: MANOJ WIP . move meta data to table, so binding can be done ..or as a metadata column..
     public class QueryColumnInfo

@@ -1,27 +1,7 @@
-﻿using Newtonsoft.Json.Linq;
-
-namespace YamlParser
+﻿namespace YamlParser.Models
 {
     public class DBQuery
     {
-        //protected void CheckJSON(ref dynamic prop, dynamic value)
-        //{
-        //    if (value is String)
-        //    {
-        //        try
-        //        {
-        //            prop = JObject.Parse(value);
-        //        }
-        //        catch (Exception e)
-        //        {
-        //            prop = value;
-
-        //        }
-        //    }
-        //    else
-        //        prop = value;
-        //}
-
         public struct ListQueryModeCode
         {
             public const string ListWithCount = "LC";
@@ -50,21 +30,5 @@ namespace YamlParser
         public Dictionary<string, QueryParameterInfo>? ParameterConfig { get; set; }
 
         public Dictionary<string, QueryColumnInfo>? ColumnConfig { get; set; }
-
-        //private dynamic? _parameterConfig, _columnConfig;
-
-        ////json
-        //public dynamic? ParameterConfig
-        //{
-        //    get { return _parameterConfig; }
-        //    set { CheckJSON(ref _parameterConfig, value); }
-        //}
-
-        ////json
-        //public dynamic? ColumnConfig
-        //{
-        //    get { return _columnConfig; }
-        //    set { CheckJSON(ref _columnConfig, value); }
-        //}
     }
 }

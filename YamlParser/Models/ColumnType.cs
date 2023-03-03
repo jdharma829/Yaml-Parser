@@ -1,9 +1,5 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-
-namespace YamlParser
+﻿namespace YamlParser.Models
 {
-    [JsonConverter(typeof(StringEnumConverter))]
     public enum ColumnType
     {
         String,

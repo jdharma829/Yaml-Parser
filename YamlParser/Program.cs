@@ -1,7 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using YamlDotNet.Serialization.NamingConventions;
-using YamlDotNet.Serialization;
-using YamlParser;
+using YamlParser.Core;
+using YamlParser.Models;
 
 //Dictionary<string, QueryParameterInfo> QueryParameterInfos = new Dictionary<string, QueryParameterInfo>();
 //QueryParameterInfos.Add("one", new QueryParameterInfo() { Type = ColumnType.Int, IsArray = false, DefaultValue = "10" });
@@ -29,16 +28,17 @@ using YamlParser;
 //    ColumnConfig = QueryColumnInfos
 //};
 
-//var updatedyaml = YamlConvert.SerializeObject(query);
+//var yaml = YamlConverter.Serialize(query);
+//Console.WriteLine(yaml);
 
-//Console.WriteLine(updatedyaml);
-
-//DBQuery result = YamlConvert.DeserializeObject<DBQuery>(updatedyaml);
+//var obj = YamlConverter.Deserialize<DBQuery>(yaml);
 
 string yamlContent = File.ReadAllText("yaml-sample.yaml");
 
 Console.WriteLine(yamlContent);
 
-DBQuery result = YamlConvert.DeserializeObject<DBQuery>(yamlContent);
+var result = YamlConverter.Deserialize<DBQuery>(yamlContent);
+
+Console.WriteLine(YamlConverter.Serialize(result));
 
 Console.Read();

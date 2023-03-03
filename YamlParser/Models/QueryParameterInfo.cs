@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
-
-namespace YamlParser
+﻿namespace YamlParser.Models
 {
     public class QueryParameterInfo
     {
